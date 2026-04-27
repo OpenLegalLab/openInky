@@ -4,9 +4,14 @@ test/testBuild
 
 # Node modules folder
 node_modules/
-index.html
-3rdpartysrc/
-onlinekommentar-mcp-main/
+
 
 # Internal manifests
 manifest.ll.xml
+
+#various
+wordplugin.code-workspace
+index.html
+3rdpartysrc/
+onlinekommentar-mcp-main/
+.clinerules
