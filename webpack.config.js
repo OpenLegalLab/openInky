@@ -75,6 +75,9 @@ module.exports = async (env, options) => {
           {
             from: "manifest*.xml",
             to: "[name]" + "[ext]",
+            globOptions: {
+              ignore: ["**/manifest.ll.xml"],
+            },
             transform(content) {
               if (dev) {
                 return content;

@@ -5,6 +5,11 @@
 - Finishing up localized German UI implementations and Add-in manifest branding (OpenInky / Raxal GmbH -> OpenLegalLab).
 
 **Recent Changes:**
+- Bumped version to 0.2.2.0 across manifests and `package.json`.
+- Updated `webpack.config.js` to exclude `manifest.ll.xml` from the copied `dist` output.
+- Added `manifest.ll.xml` for internal deployment (ignored in git) using URL query parameters (`apiKey`, `model`, and `baseUrl`) to pre-configure the LLM endpoint logic.
+- Updated `manifest.xml` and `manifest.demo.xml` to include `https://llm.lauxlawyers.ch` in `AppDomains`.
+- Updated `App.tsx` initialization to parse `window.location.search` overriding default/cached `LLMConfig`.
 - Bumped version to v0.2.1.0 to include `manifest.demo.xml` and an `index.html` redirect to the GitHub repository.
 - Hosted a live demo version of the Web App on `https://openinky.raxal.io`.
 - Scaffolded project using `yo office` React template and manually converted to single-host Word Add-in.

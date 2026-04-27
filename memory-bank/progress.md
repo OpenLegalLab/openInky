@@ -1,6 +1,7 @@
 # Progress
 
 **What works:**
+- Internal deployment manifest (`manifest.ll.xml`) configurable via `SourceLocation` query parameters.
 - Live demo deployment available at `https://openinky.raxal.io` with `manifest.demo.xml`.
 - Fully scaffolded React-based Word Add-in using Fluent UI.
 - Secure, customizable LLM Endpoint interaction service configured for local caching.
@@ -15,6 +16,7 @@
 
 **Current Status:**
 - Integration is functional. E2E testing completed dynamically via Sideloading.
+- Support added for initial configuration via `window.location.search` URL parameters.
 
 **Evolution of Project Decisions:**
 - Add-in moved away from hardcoded temperature parameters to handle LLM specific nuances gracefully.

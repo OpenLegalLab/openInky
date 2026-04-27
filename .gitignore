@@ -7,3 +7,6 @@ node_modules/
 index.html
 3rdpartysrc/
 onlinekommentar-mcp-main/
+
+# Internal manifests
+manifest.ll.xml

@@ -24,13 +24,40 @@ export const App: React.FC = () => {
   const [enableMcpServers, setEnableMcpServers] = React.useState<boolean>(false);
   
   React.useEffect(() => {
+    let currentConfig = { ...DEFAULT_CONFIG };
+
     const savedConfig = localStorage.getItem("llmConfig");
     if (savedConfig) {
       try {
-        setConfig(JSON.parse(savedConfig));
+        currentConfig = { ...currentConfig, ...JSON.parse(savedConfig) };
       } catch (e) {
         console.error("Failed to parse config", e);
       }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlApiKey = urlParams.get("apiKey");
+    const urlModel = urlParams.get("model");
+    const urlBaseUrl = urlParams.get("baseUrl");
+    
+    let hasUrlOverrides = false;
+    if (urlApiKey) {
+      currentConfig.apiKey = urlApiKey;
+      hasUrlOverrides = true;
+    }
+    if (urlModel) {
+      currentConfig.model = urlModel;
+      hasUrlOverrides = true;
+    }
+    if (urlBaseUrl) {
+      currentConfig.baseUrl = urlBaseUrl;
+      hasUrlOverrides = true;
+    }
+
+    setConfig(currentConfig);
+
+    if (hasUrlOverrides) {
+      localStorage.setItem("llmConfig", JSON.stringify(currentConfig));
     }
   }, []);
 
