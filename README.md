@@ -73,7 +73,22 @@ Once your web application is live, you must distribute the `manifest.xml` file l
 ## Contributing
 We welcome improvements! See the `TODO.md` file for an outline of upcoming tasks, known bugs, and requested features. 
 
+## Try the Demo
+
+You can try OpenInky without setting up a local development environment! We have hosted a live version at `https://openinky.raxal.io`.
+
+**How to install the demo:**
+1. Download the [`manifest.demo.xml`](manifest.demo.xml) file from this repository.
+2. Sideload it into Microsoft Word:
+   - **Word on the Web:** Go to Insert > Add-ins > Manage My Add-ins > Upload My Add-in, and select the downloaded file.
+   - **Word Desktop (Windows):** Create a shared network folder, place the XML file there, and add the folder path to **Trust Center > Trusted Add-in Catalogs**. Then go to Insert > Get Add-ins > Shared Folder.
+   - **Mac:** Place the file in `/Users/<username>/Library/Containers/com.microsoft.Word/Data/Documents/wef`.
+
 ## Changelog
+
+### v0.2.1.0
+- **Live Demo Deployment:** Added `manifest.demo.xml` to easily test the hosted version at `https://openinky.raxal.io`.
+- Added an `index.html` redirect to the GitHub repository.
 
 ### v0.2.0
 - **Native Tools Support:** Direct API integration with Fedlex and Onlinekommentar to search and fetch legal data.

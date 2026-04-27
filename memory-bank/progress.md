@@ -1,6 +1,7 @@
 # Progress
 
 **What works:**
+- Live demo deployment available at `https://openinky.raxal.io` with `manifest.demo.xml`.
 - Fully scaffolded React-based Word Add-in using Fluent UI.
 - Secure, customizable LLM Endpoint interaction service configured for local caching.
 - Diff generation logic using `jsdiff.diffWords` reliably identifies granular text changes.

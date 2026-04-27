@@ -5,6 +5,8 @@
 - Finishing up localized German UI implementations and Add-in manifest branding (OpenInky / Raxal GmbH -> OpenLegalLab).
 
 **Recent Changes:**
+- Bumped version to v0.2.1.0 to include `manifest.demo.xml` and an `index.html` redirect to the GitHub repository.
+- Hosted a live demo version of the Web App on `https://openinky.raxal.io`.
 - Scaffolded project using `yo office` React template and manually converted to single-host Word Add-in.
 - Completed core UI development using `@fluentui/react` components (`App.tsx`, `Settings.tsx`).
 - Created LLM Service (`llmService.ts`) robust enough to handle custom API bases with fallback error tracking parsed directly from response bodies. Handled specific parameter dropping (e.g. dynamic `temperature` dropping) for modern `gpt-5` series endpoints.
