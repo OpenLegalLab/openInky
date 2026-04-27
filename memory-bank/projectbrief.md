@@ -1,0 +1,3 @@
+# Project Brief
+
+Develop an open-source Microsoft Word Add-in with a React-based sidebar AI assistant, known as **OpenInky**. The add-in integrates with a custom LLM endpoint (defaulting to OpenAI-compatible LLM APIs) to provide context-aware text improvements. A key feature is the native Track Changes integration, providing clean, human-like redlining without blindly replacing entire paragraphs, accomplished using `jsdiff` to compute minimal word-level differences. The application interface is tailored for legal professionals, focusing on clarity, professionalism, and consistent legal terminology, all presented in a gender-inclusive German interface.

@@ -1,0 +1,143 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+    "id": "f2b103f1-1ab1-4e1b-8f0b-072aa3d4e19d",
+    "manifestVersion": "1.17",
+    "version": "0.1.0",
+    "name": {
+      "short": "OpenInky",
+      "full": "OpenInky"
+    },
+    "description": {
+      "short": "Open-source AI assistant for Word.",
+      "full": "Open-source AI assistant for Microsoft Word with Track Changes support."
+    },
+    "developer": {
+      "name": "OpenLegalLab",
+      "websiteUrl": "https://github.com/OpenLegalLab",
+      "privacyUrl": "https://github.com/OpenLegalLab",
+      "termsOfUseUrl": "https://github.com/OpenLegalLab"
+    },
+    "icons": {
+      "outline": "assets/outline.png",
+      "color": "assets/color.png"
+    },
+    "accentColor": "#230201",
+    "localizationInfo": {
+      "defaultLanguageTag": "en-us",
+      "additionalLanguages": []
+    },
+    "authorization": {
+      "permissions": {
+        "resourceSpecific": [
+          {
+            "name": "Mailbox.ReadWrite.User",
+            "type": "Delegated"
+          }
+        ]
+      }
+    },
+    "validDomains": ["github.com", "localhost"],
+    "extensions": [
+      {
+        "requirements": {
+          "scopes": ["mail"],
+          "capabilities": [
+            { "name": "Mailbox", "minVersion": "1.3" }
+          ]
+        },
+        "runtimes": [
+          {
+            "requirements": {
+              "capabilities": [
+                { "name": "Mailbox", "minVersion": "1.3" }
+              ]
+            },
+            "id": "TaskPaneRuntime",
+            "type": "general",
+            "code": {
+              "page": "https://localhost:3000/taskpane.html"
+            },
+            "lifetime": "short",
+            "actions": [
+              {
+                "id": "TaskPaneRuntimeShow",
+                "type":"openPage",
+                "pinnable": false,
+                "view": "dashboard"
+              }
+            ]
+          },
+          {
+            "id": "CommandsRuntime",
+            "type": "general",
+            "code": {
+              "page": "https://localhost:3000/commands.html",
+              "script": "https://localhost:3000/commands.js"
+            },
+            "lifetime": "short",
+            "actions": [
+              {
+                "id": "action",
+                "type": "executeFunction"
+              }
+            ]
+          }
+        ],
+        "ribbons": [
+          {
+            "contexts": [
+              "mailCompose"
+            ],
+            "tabs": [
+              {
+                "builtInTabId": "TabDefault",
+                "groups": [
+                  {
+                    "id": "msgComposeGroup",
+                    "label": "OpenInky Add-in",
+                    "icons": [
+                      { "size": 16, "url": "https://localhost:3000/assets/icon-16.png" },
+                      { "size": 32, "url": "https://localhost:3000/assets/icon-32.png" },
+                      { "size": 80, "url": "https://localhost:3000/assets/icon-80.png" }
+                    ],
+                    "controls": [
+                      {
+                        "id": "msgComposeOpenPaneButton",
+                        "type": "button",
+                        "label": "Show Task Pane",
+                        "icons": [
+                          { "size": 16, "url": "https://localhost:3000/assets/icon-16.png" },
+                          { "size": 32, "url": "https://localhost:3000/assets/icon-32.png" },
+                          { "size": 80, "url": "https://localhost:3000/assets/icon-80.png" }
+                        ],
+                        "supertip": {
+                          "title": "Show Task Pane",
+                          "description": "Opens a task pane."
+                        },
+                        "actionId": "TaskPaneRuntimeShow"
+                      },
+                      {
+                        "id": "ActionButton",
+                        "type": "button",
+                        "label": "Perform an action",
+                        "icons": [
+                          { "size": 16, "url": "https://localhost:3000/assets/icon-16.png" },
+                          { "size": 32, "url": "https://localhost:3000/assets/icon-32.png" },
+                          { "size": 80, "url": "https://localhost:3000/assets/icon-80.png" }
+                        ],
+                        "supertip": {
+                          "title": "Perform an action",
+                          "description": "Perform an action when clicked."
+                        },
+                        "actionId": "action"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
