@@ -12,9 +12,11 @@ export const Settings: React.FC<SettingsProps> = ({ config, onSave, onCancel }) 
   const [baseUrl, setBaseUrl] = React.useState(config.baseUrl);
   const [apiKey, setApiKey] = React.useState(config.apiKey);
   const [model, setModel] = React.useState(config.model);
+  const [mcpServers, setMcpServers] = React.useState((config.mcpServers || []).join("\n"));
 
   const handleSave = () => {
-    onSave({ baseUrl, apiKey, model });
+    const serversArray = mcpServers.split("\n").map(s => s.trim()).filter(s => s.length > 0);
+    onSave({ baseUrl, apiKey, model, mcpServers: serversArray });
   };
 
   return (
@@ -42,10 +44,23 @@ export const Settings: React.FC<SettingsProps> = ({ config, onSave, onCancel }) 
         onChange={(_e, newValue) => setModel(newValue || "")} 
       />
 
+      <TextField 
+        label="Externe MCP Server URLs (eine pro Zeile)" 
+        multiline
+        rows={3}
+        value={mcpServers} 
+        onChange={(_e, newValue) => setMcpServers(newValue || "")} 
+        placeholder="https://mcp.entscheidsuche.ch/mcp"
+      />
+
       <Stack horizontal tokens={{ childrenGap: 10 }} styles={{ root: { marginTop: 20 } }}>
         <PrimaryButton text="Speichern" onClick={handleSave} />
         <DefaultButton text="Abbrechen" onClick={onCancel} />
       </Stack>
+
+      <Text variant="small" styles={{ root: { marginTop: 20, color: '#666' } }}>
+        This application uses native API tools translated from the open-source projects Fedlex MCP and Onlinekommentar MCP.
+      </Text>
     </Stack>
   );
 };

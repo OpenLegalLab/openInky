@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>f20ff150-ad48-4301-a59a-cee59cecfd5e</Id>
-  <Version>0.1.0.0</Version>
+  <Version>0.2.0.0</Version>
   <ProviderName>OpenLegalLab / Marc Feldmann</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="OpenInky"/>
@@ -72,13 +72,13 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
+        <bt:String id="GetStarted.Title" DefaultValue="Get started with OpenInky!"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="OpenInky"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="OpenInky"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded successfully. Go to the HOME tab and click the 'Show Task Pane' button to get started."/>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Task Pane"/>
+        <bt:String id="GetStarted.Description" DefaultValue="OpenInky loaded successfully. Go to the HOME tab and click the 'OpenInky' button to get started."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to open OpenInky"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

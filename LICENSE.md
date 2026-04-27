@@ -18,3 +18,14 @@ No trademark or endorsement
 This licence does not grant any rights to use the name, logos, or trademarks of the copyright holder, except as necessary to attribute origin.
 Disclaimer of warranty
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+### Third-Party Software
+This project includes code derived from the following open-source projects:
+
+**Fedlex MCP Server**
+Portions of the native tool integration are translated from the Python Fedlex MCP Client by Jan Manuel Winkler (https://github.com/janmanuelwinkler/legal_mcp/).
+
+**Onlinekommentar MCP Server**
+Portions of the native tool integration are translated from the Node.js Onlinekommentar MCP Server by Elliot Vaucher (https://github.com/self-tech-labs/onlinekommentar-mcp).

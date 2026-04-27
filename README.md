@@ -1,11 +1,10 @@
 # OpenInky
 
-**OpenInky** is an open-source Microsoft Word Add-in with a React-based sidebar AI assistant, primarily tailored for legal professionals and everyday writers. This project was developed as a fun initiative during the **OpenLegalLab 2026**.
+**OpenInky** is an open-source Microsoft Word Add-in with a React-based sidebar AI assistant, primarily tailored for legal professionals and everyday writers. This was developed as a stealth fun project during the **OpenLegalLab 2026**.
 
 ## Features
-- **Context-Aware AI Assistant:** Select text in your Word document and ask OpenInky to improve, simplify, or format it using custom or quick-action prompts.
+- **Context-Aware AI Assistant:** Highlight a specific portion of text, or leave your selection empty to process the entire document. The AI will strictly follow your custom or quick-action prompts to improve, simplify, or format the designated text.
 - **Native Track Changes Integration:** OpenInky uses word-level differencing (`jsdiff`) to compute precise modifications. Unlike standard AI tools that blindly replace large blocks of text, OpenInky inserts human-like redlines back into your document via Word's native Track Changes API.
-- **Inclusive German UI:** Designed with a professional, gender-inclusive German interface (e.g., "Nicht-Jurist:innen").
 - **Customizable LLM Endpoints:** Seamlessly connect OpenInky to any OpenAI-compatible API endpoint directly from the settings pane. 
 
 ## Setup & Local Development
@@ -37,6 +36,7 @@ OpenInky does not lock you into a specific AI provider. You can securely configu
    - **API Key**
    - **Model Name** (e.g., `gpt-5.2-turbo`, `llama-3`)
 4. Click **Save**. These settings are cached locally in your browser's local storage.
+(we use LiteLLM to expose a unified OpenAI-compatible endpoint)
 
 ## Deployment
 
@@ -73,5 +73,19 @@ Once your web application is live, you must distribute the `manifest.xml` file l
 ## Contributing
 We welcome improvements! See the `TODO.md` file for an outline of upcoming tasks, known bugs, and requested features. 
 
+## Changelog
+
+### v0.2.0
+- **Native Tools Support:** Direct API integration with Fedlex and Onlinekommentar to search and fetch legal data.
+- **External MCP Server Support:** Configurable dynamically loaded tools from external MCP servers via SSE (Server-Sent Events) transports (e.g., Entscheidsuche).
+- **Anti-Hallucination Features:** Improved LLM system prompts directing the AI not to invent results if an API search fails or returns zero matches.
+- **Full Source Transparency:** Verwendete Tools UI clearly shows the raw, un-truncated retrieved content for full accountability.
+- **API UI Toggles:** Easily turn Fedlex, Onlinekommentar, and External MCP servers on or off directly from the main task pane.
+
 ## License
-MIT License
+Licensed under the No-Resale Source Licence – see LICENSE.md.
+
+## Acknowledgements
+This project incorporates tool logic translated from the following open-source projects:
+- **Fedlex MCP Client**: Provides SPARQL querying and HTML extraction for Swiss federal laws.
+- **Onlinekommentar MCP**: Provides API integration for searching and retrieving Swiss legal commentaries.
